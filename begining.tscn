@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://baanm10oh2gb"]
+
+[ext_resource type="Texture2D" uid="uid://caxh4ur6bhrp6" path="res://sprites/room.png" id="1_2ninj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mi635"]
+size = Vector2(133.70001, 64.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwkw4"]
+size = Vector2(20, 632)
+
+[node name="Platform" type="Node2D" unique_id=1891058109]
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=67017445]
+scale = Vector2(10, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor" unique_id=723292767]
+position = Vector2(-36, -306)
+scale = Vector2(0.07, 0.63)
+texture = ExtResource("1_2ninj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=385179095]
+position = Vector2(-15.5, -16)
+shape = SubResource("RectangleShape2D_mi635")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor" unique_id=1819268138]
+position = Vector2(-49.1, -319)
+shape = SubResource("RectangleShape2D_gwkw4")

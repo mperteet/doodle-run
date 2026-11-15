@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://71vm77jga3s6"]
+
+[ext_resource type="Script" uid="uid://dgrk16e7wsjvi" path="res://scripts/goal.gd" id="1_goal"]
+[ext_resource type="Texture2D" uid="uid://dsntb6t4x5ekq" path="res://sprites/lead.png" id="2_lead"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_goal"]
+size = Vector2(80, 180)
+
+[node name="Goal" type="Area2D" unique_id=1378263194]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_goal")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1260101058]
+position = Vector2(0, -100)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("2_lead")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1212780239]
+position = Vector2(0, -95)
+shape = SubResource("RectangleShape2D_goal")

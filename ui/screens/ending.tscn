@@ -1,0 +1,69 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/screens/ending.gd" id="1_end"]
+[ext_resource type="VideoStream" uid="uid://d02wwd2mqqwfn" path="res://sprites/bg.ogv" id="2_bg"]
+
+[node name="Ending" type="Control" node_paths=PackedStringArray("default_focus") groups=["menu"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_end")
+closable = false
+default_focus = NodePath("Center/VBox/PlayAgain")
+
+[node name="Background" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stream = ExtResource("2_bg")
+autoplay = true
+expand = true
+loop = true
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Title" type="Label" parent="Center/VBox"]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+text = "You made it!"
+horizontal_alignment = 1
+
+[node name="Stats" type="Label" parent="Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Total time  0:00.0
+Total deaths  0"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Center/VBox"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+
+[node name="PlayAgain" type="Button" parent="Center/VBox"]
+layout_mode = 2
+text = "Play Again"
+
+[node name="MainMenu" type="Button" parent="Center/VBox"]
+layout_mode = 2
+text = "Main Menu"
+
+[connection signal="pressed" from="Center/VBox/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="Center/VBox/MainMenu" to="." method="_on_main_menu_pressed"]

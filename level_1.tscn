@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://ps2sjw0r0ieh"]
+
+[ext_resource type="PackedScene" uid="uid://dh673mrpf5fjf" path="res://player.tscn" id="1_3hls8"]
+[ext_resource type="PackedScene" uid="uid://b1b23ith8fw2y" path="res://platform.tscn" id="3_hn12h"]
+[ext_resource type="VideoStream" uid="uid://d02wwd2mqqwfn" path="res://sprites/bg.ogv" id="3_ihfcg"]
+[ext_resource type="Script" uid="uid://dt3jn4cm0rx2l" path="res://scripts/follow_camera.gd" id="4_cam"]
+[ext_resource type="PackedScene" uid="uid://baanm10oh2gb" path="res://begining.tscn" id="7_j7kpp"]
+[ext_resource type="PackedScene" path="res://goal.tscn" id="9_goal"]
+[ext_resource type="PackedScene" path="res://enemy.tscn" id="10_enemy"]
+[ext_resource type="PackedScene" path="res://spikes.tscn" id="11_spikes"]
+
+[node name="Level2" type="Node2D" unique_id=87730049]
+
+[node name="Player" parent="." unique_id=37735588 instance=ExtResource("1_3hls8")]
+z_index = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=248268248 node_paths=PackedStringArray("target")]
+script = ExtResource("4_cam")
+target = NodePath("../Player/Player")
+
+[node name="Background" type="CanvasLayer" parent="." unique_id=1615502337]
+layer = -1
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Background" unique_id=1615502336]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stream = ExtResource("3_ihfcg")
+autoplay = true
+expand = true
+loop = true
+
+[node name="Platform" parent="." unique_id=1891058109 instance=ExtResource("3_hn12h")]
+position = Vector2(-22, 196)
+
+[node name="Platform2" parent="." unique_id=1759547727 instance=ExtResource("3_hn12h")]
+position = Vector2(673, 102)
+
+[node name="Platform3" parent="." unique_id=1151953881 instance=ExtResource("3_hn12h")]
+position = Vector2(1321, 283)
+
+[node name="Platform4" parent="." unique_id=697607091 instance=ExtResource("3_hn12h")]
+position = Vector2(1986, 158)
+
+[node name="Goal" parent="." unique_id=1781297436 instance=ExtResource("9_goal")]
+position = Vector2(2220, 133)
+
+[node name="Enemy" parent="." unique_id=1774112582 instance=ExtResource("10_enemy")]
+position = Vector2(787.6649, 76.67523)
+velocity = Vector2(80, 0)
+
+[node name="Enemy2" parent="." unique_id=1355592329 instance=ExtResource("10_enemy")]
+position = Vector2(1252, 254)
+
+[node name="Spikes" parent="." unique_id=1703104242 instance=ExtResource("11_spikes")]
+position = Vector2(1880, 133)
+width = 142.095
+art_scale = 0.38
+
+[node name="Platform5" parent="." unique_id=679839923 instance=ExtResource("7_j7kpp")]
+position = Vector2(-888, 237)
