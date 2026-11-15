@@ -43,7 +43,7 @@ theme_override_constants/separation = 18
 [node name="Title" type="Label" parent="Center/VBox"]
 layout_mode = 2
 theme_type_variation = &"TitleLabel"
-text = "Doodle Run"
+text = "Sketchy Scramble"
 horizontal_alignment = 1
 
 [node name="Spacer" type="Control" parent="Center/VBox"]
